@@ -3,8 +3,15 @@ var router = express.Router();
 
 /* GET users listing. */
 
+function genRand() {
+    return Math.floor(Math.random()*8999999+1000000);
+}
+
 router.post('/', function (req, res, next) {
     res.header("Content-Type", "text/plain");
+
+    var reqId = genRand();
+
     res.send ("<ACORD><Status>\n" +
         "<StatusCd>0</StatusCd>\n" +
         "<StatusDesc>Success</StatusDesc>\n" +
@@ -28,7 +35,7 @@ router.post('/', function (req, res, next) {
         "<Language>en-US</Language>\n" +
         "</SignonRs><ClaimsSvcRs><Status>\n" +
         "<StatusCd>0</StatusCd>\n" +
-        "</Status><RqUID>1111111</RqUID><ClaimInvestigationAddRs><RqUID>1111111</RqUID><TransactionResponseDt/><CurCd>en-US</CurCd><MsgStatus><MsgStatusCd>ResponsePending</MsgStatusCd></MsgStatus></ClaimInvestigationAddRs></ClaimsSvcRs></ACORD>");
+        "</Status><RqUID>"+reqId+"</RqUID><ClaimInvestigationAddRs><RqUID>"+reqId+"</RqUID><TransactionResponseDt/><CurCd>en-US</CurCd><MsgStatus><MsgStatusCd>ResponsePending</MsgStatusCd></MsgStatus></ClaimInvestigationAddRs></ClaimsSvcRs></ACORD>");
 
     //res.sendStatus(200);
 });
