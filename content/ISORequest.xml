@@ -10,7 +10,7 @@
           <ItemIdInfo>
             <InsurerId>123456</InsurerId>
           </ItemIdInfo>
-          <ClaimsReported ReportedToRef="InsurerID">
+          <ClaimsReported ReportedToRef="InsurerID"> 
             <ReportedDt />
           </ClaimsReported>
           <LossDt>2015-06-09</LossDt>
