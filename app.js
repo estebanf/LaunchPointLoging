@@ -10,6 +10,9 @@ var users = require('./routes/users');
 var logging = require('./routes/logging');
 var generateFile = require('./routes/generateFile');
 var sendToISO = require('./routes/sendToISO');
+var createDiary = require('./routes/createDiary');
+var createActivity = require('./routes/createActivity');
+var updateStatus = require('./routes/updateStatus');
 
 var app = express();
 
@@ -30,6 +33,9 @@ app.use('/users', users);
 app.use('/logging', logging);
 app.use('/generatefile', generateFile);
 app.use('/sendiso', sendToISO);
+app.use('/creatediary', createDiary);
+app.use('/createactivity', createActivity);
+app.use('/updatestatus', updateStatus);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
